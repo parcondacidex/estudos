@@ -3,19 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Estudos</title>
 
 <style>
 :root{
-    --bg:#0f1117;
-    --sidebar:#161b22;
-    --card:#1c2128;
-    --text:#e6edf3;
-    --muted:#8b949e;
-    --border:#30363d;
-    --accent:#58a6ff;
-    --hover:#21262d;
+    --bg:#f6faf7;
+    --sidebar:#ffffff;
+    --card:#ffffff;
+    --accent:#8bc5a3;
+    --accent-dark:#5c9a76;
+    --text:#2d3a33;
+    --muted:#6f7d75;
+    --border:#dce9e0;
+    --hover:#edf7f0;
+    --shadow:0 8px 24px rgba(0,0,0,0.05);
 }
 
 *{
@@ -29,7 +30,7 @@ html{
 }
 
 body{
-    font-family: "Segoe UI", Roboto, sans-serif;
+    font-family: "Segoe UI", Inter, sans-serif;
     background:var(--bg);
     color:var(--text);
     display:flex;
@@ -45,29 +46,33 @@ body{
     position:fixed;
     height:100vh;
     overflow-y:auto;
-    padding:25px;
+    padding:30px 20px;
 }
 
 .logo{
     font-size:2rem;
     font-weight:700;
+    color:var(--accent-dark);
     margin-bottom:10px;
 }
 
 .subtitle{
     color:var(--muted);
-    margin-bottom:25px;
     font-size:.9rem;
+    margin-bottom:25px;
 }
 
 .search{
     width:100%;
     padding:12px;
-    border-radius:8px;
     border:1px solid var(--border);
-    background:var(--card);
-    color:var(--text);
+    border-radius:10px;
     margin-bottom:25px;
+    outline:none;
+}
+
+.search:focus{
+    border-color:var(--accent);
 }
 
 .menu{
@@ -79,11 +84,11 @@ body{
 }
 
 .menu a{
-    display:block;
     text-decoration:none;
     color:var(--text);
-    padding:10px;
-    border-radius:8px;
+    display:block;
+    padding:10px 12px;
+    border-radius:10px;
     transition:.2s;
 }
 
@@ -100,81 +105,103 @@ body{
 }
 
 .hero{
-    margin-bottom:30px;
+    margin-bottom:35px;
 }
 
 .hero h1{
     font-size:3rem;
     margin-bottom:10px;
+    color:var(--accent-dark);
 }
 
 .hero p{
     color:var(--muted);
 }
 
-.section{
+/* EXPANSÍVEIS */
+
+details{
     background:var(--card);
     border:1px solid var(--border);
-    border-radius:12px;
-    padding:30px;
-    margin-bottom:25px;
+    border-radius:14px;
+    margin-bottom:18px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
 }
 
-.section h2{
-    margin-bottom:15px;
-    color:var(--accent);
+summary{
+    cursor:pointer;
+    list-style:none;
+    padding:20px 24px;
+    font-size:1.1rem;
+    font-weight:600;
+    transition:.2s;
 }
 
-.section p{
+summary:hover{
+    background:var(--hover);
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary::after{
+    content:"+";
+    float:right;
+    font-size:1.3rem;
+    color:var(--accent-dark);
+}
+
+details[open] summary::after{
+    content:"–";
+}
+
+.details-content{
+    padding:0 24px 24px 24px;
     color:var(--muted);
+    line-height:1.8;
 }
 
 .card{
-    background:rgba(255,255,255,0.02);
+    background:#f9fcfa;
     border:1px solid var(--border);
+    border-radius:12px;
     padding:15px;
-    border-radius:10px;
-    margin-top:15px;
-}
-
-.card strong{
-    display:block;
-    margin-bottom:8px;
-}
-
-.study-step{
-    margin-bottom:14px;
-    line-height:1.7;
-}
-
-.study-step strong{
-    color:var(--accent);
+    margin-top:12px;
 }
 
 .prompt{
-    background:#111827;
-    border-left:4px solid var(--accent);
-    padding:18px;
+    background:#eef8f1;
+    border-left:5px solid var(--accent-dark);
+    padding:15px;
+    margin:15px 0;
     border-radius:8px;
-    margin:20px 0;
+    color:var(--text);
     font-style:italic;
 }
 
+ol{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:12px;
+}
+
 .flow{
-    margin-top:20px;
-    padding:15px;
-    border-radius:10px;
-    background:#111827;
+    margin-top:15px;
+    background:#f3faf5;
     border:1px solid var(--border);
+    border-radius:10px;
+    padding:15px;
 }
 
 footer{
     text-align:center;
-    margin-top:40px;
+    margin-top:30px;
     color:var(--muted);
 }
-
-/* RESPONSIVO */
 
 @media(max-width:900px){
 
@@ -183,8 +210,8 @@ footer{
     }
 
     .sidebar{
-        position:relative;
         width:100%;
+        position:relative;
         height:auto;
         border-right:none;
         border-bottom:1px solid var(--border);
@@ -209,14 +236,14 @@ footer{
     <div class="logo">📚 Estudos</div>
 
     <div class="subtitle">
-        Central de aprendizagem e revisão
+        Central de organização dos estudos
     </div>
 
     <input
         type="text"
         id="search"
         class="search"
-        placeholder="Pesquisar..."
+        placeholder="Pesquisar tópico..."
     >
 
     <ul class="menu">
@@ -235,126 +262,141 @@ footer{
     <div class="hero">
         <h1>Estudos</h1>
         <p>
-            Repositório pessoal de organização, aprendizado e revisão.
+            Repositório pessoal para organização, revisão e aprendizagem contínua.
         </p>
     </div>
 
-    <section class="section searchable" id="ingles">
-        <h2>🇬🇧 Inglês</h2>
-        <p>
-            Gramática, vocabulário, leitura, escrita,
-            listening, speaking e certificações.
-        </p>
-    </section>
+    <!-- INGLÊS -->
 
-    <section class="section searchable" id="frances">
-        <h2>🇫🇷 Francês</h2>
-        <p>
-            Gramática, vocabulário, produção escrita,
-            compreensão oral e conversação.
-        </p>
-    </section>
+    <details id="ingles" class="topic">
+        <summary>🇬🇧 Inglês</summary>
 
-    <section class="section searchable" id="traducao">
-        <h2>🌎 Tradução</h2>
-        <p>
-            Teoria da tradução, localização,
-            terminologia, revisão textual e pesquisa.
-        </p>
-    </section>
-
-    <section class="section searchable" id="programacao">
-
-        <h2>💻 Programação</h2>
-
-        <div class="card">
-            <strong>Python</strong>
-            Automação, análise de dados,
-            scripts e desenvolvimento.
+        <div class="details-content">
+            Gramática, vocabulário, leitura, escrita, listening,
+            speaking e certificações internacionais.
         </div>
+    </details>
 
-        <div class="card">
-            <strong>JavaScript</strong>
-            Desenvolvimento web, DOM,
-            APIs e lógica de programação.
+    <!-- FRANCÊS -->
+
+    <details id="frances" class="topic">
+        <summary>🇫🇷 Francês</summary>
+
+        <div class="details-content">
+            Gramática, compreensão oral, vocabulário,
+            produção escrita e conversação.
         </div>
+    </details>
 
-    </section>
+    <!-- TRADUÇÃO -->
 
-    <section class="section searchable" id="concursos">
+    <details id="traducao" class="topic">
+        <summary>🌎 Tradução</summary>
 
-        <h2>🎯 Concursos</h2>
-
-        <h3>Organização de Estudo</h3>
-
-        <br>
-
-        <div class="study-step">
-            <strong>1.</strong>
-            Utilizar o Raio-X do Gran Cursos para identificar os assuntos
-            mais cobrados pela banca.
+        <div class="details-content">
+            Teoria da tradução, localização de software,
+            terminologia, revisão textual e pesquisa acadêmica.
         </div>
+    </details>
 
-        <div class="study-step">
-            <strong>2.</strong>
-            Resolver 100 questões sobre o assunto estudado.
+    <!-- PROGRAMAÇÃO -->
+
+    <details id="programacao" class="topic">
+        <summary>💻 Programação</summary>
+
+        <div class="details-content">
+
+            <div class="card">
+                <strong>Python</strong><br>
+                Automação, scripts, análise de dados,
+                desenvolvimento e bibliotecas.
+            </div>
+
+            <div class="card">
+                <strong>JavaScript</strong><br>
+                Desenvolvimento web, DOM, APIs e lógica
+                de programação.
+            </div>
+
         </div>
+    </details>
 
-        <div class="study-step">
-            <strong>3.</strong>
-            Explicar o tópico de forma simples para uma pessoa sem
-            conhecimentos sobre concursos.
+    <!-- CONCURSOS -->
+
+    <details id="concursos" class="topic">
+        <summary>🎯 Concursos</summary>
+
+        <div class="details-content">
+
+            <h3>Organização de Estudo</h3>
+
+            <br>
+
+            <ol>
+                <li>
+                    Utilizar o <strong>Raio-X do Gran Cursos</strong>
+                    para identificar os assuntos mais cobrados.
+                </li>
+
+                <li>
+                    Resolver <strong>100 questões</strong>
+                    sobre o assunto da banca.
+                </li>
+
+                <li>
+                    Explicar o conteúdo de forma simples para
+                    uma pessoa sem conhecimentos sobre concursos.
+                </li>
+
+                <li>
+                    Caso não consiga compreender o conteúdo,
+                    utilizar o comentário do professor no ChatGPT.
+                </li>
+            </ol>
+
+            <div class="prompt">
+                "Explique de forma didática e simples para um leigo.
+                Crie associações de forma que um leigo consiga
+                aprender e memorizar."
+            </div>
+
+            <ol start="5">
+                <li>
+                    Criar um caderno de erros ou flashcards
+                    contendo todas as questões erradas.
+                </li>
+
+                <li>
+                    Fazer revisões estratégicas periódicas.
+                </li>
+
+                <li>
+                    Estudar novamente a teoria dos tópicos
+                    em que houver maior quantidade de erros.
+                </li>
+            </ol>
+
+            <div class="flow">
+                <strong>Fluxo de estudo:</strong><br><br>
+                Raio-X → 100 Questões → Explicação Simples →
+                ChatGPT → Caderno de Erros →
+                Revisão Estratégica → Reforço Teórico
+            </div>
+
         </div>
+    </details>
 
-        <div class="study-step">
-            <strong>4.</strong>
-            Caso não consiga compreender o conteúdo,
-            utilizar o comentário do professor no ChatGPT.
+    <!-- ANOTAÇÕES -->
+
+    <details id="anotacoes" class="topic">
+        <summary>📝 Anotações Gerais</summary>
+
+        <div class="details-content">
+            Espaço para resumos, observações,
+            referências bibliográficas, ideias,
+            lembretes e conteúdos importantes.
         </div>
-
-        <div class="prompt">
-            "Explique de forma didática e simples para um leigo.
-            Crie associações de forma que um leigo consiga aprender
-            e memorizar."
-        </div>
-
-        <div class="study-step">
-            <strong>5.</strong>
-            Criar um caderno de erros ou flashcards contendo todas
-            as questões respondidas incorretamente.
-        </div>
-
-        <div class="study-step">
-            <strong>6.</strong>
-            Fazer revisões estratégicas periódicas.
-        </div>
-
-        <div class="study-step">
-            <strong>7.</strong>
-            Estudar novamente a teoria dos tópicos em que houver
-            maior índice de erros.
-        </div>
-
-        <div class="flow">
-            <strong>Fluxo recomendado:</strong><br><br>
-            Raio-X → Questões → Explicação Simples →
-            ChatGPT → Flashcards →
-            Revisão Estratégica → Reforço Teórico
-        </div>
-
-    </section>
-
-    <section class="section searchable" id="anotacoes">
-
-        <h2>📝 Anotações Gerais</h2>
-
-        <p>
-            Espaço destinado a resumos, observações,
-            lembretes, referências bibliográficas,
-            ideias e registros importantes.
-        </p>
-
-    </section>
+    </details>
 
     <footer>
         © 2026 • Estudos
@@ -363,21 +405,20 @@ footer{
 </main>
 
 <script>
-const searchInput = document.getElementById('search');
+const searchInput = document.getElementById("search");
 
-searchInput.addEventListener('keyup', function(){
+searchInput.addEventListener("keyup", function(){
 
-    const value = this.value.toLowerCase();
+    const filter = this.value.toLowerCase();
 
-    document.querySelectorAll('.searchable')
-    .forEach(section => {
+    document.querySelectorAll(".topic").forEach(topic => {
 
-        const text = section.innerText.toLowerCase();
+        const text = topic.innerText.toLowerCase();
 
-        if(text.includes(value)){
-            section.style.display = 'block';
+        if(text.includes(filter)){
+            topic.style.display = "block";
         } else {
-            section.style.display = 'none';
+            topic.style.display = "none";
         }
 
     });
