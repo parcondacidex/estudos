@@ -60,14 +60,13 @@ body{
     z-index:1000;
 
     background:var(--sidebar);
-
     border-bottom:1px solid var(--border);
 
-    padding:20px 40px;
+    padding:12px 30px;
 
     display:flex;
     flex-wrap:wrap;
-    gap:15px;
+    gap:10px;
     align-items:center;
     justify-content:space-between;
 
@@ -102,27 +101,29 @@ body{
     list-style:none;
     display:flex;
     flex-wrap:wrap;
-    gap:10px;
+    gap:2px;
 }
 
 .menu a{
     text-decoration:none;
     color:var(--text);
 
-    padding:10px 16px;
+    padding:6px 12px;
 
-    border-radius:999px;
+    border-radius:20px;
 
-    background:var(--card);
+    background:transparent;
 
-    border:1px solid var(--border);
+    border:none;
+
+    font-size:.95rem;
 
     transition:.2s;
 }
 
 .menu a:hover{
-    background:var(--blue);
-    color:white;
+    background:rgba(127,174,220,.15);
+    color:var(--blue-dark);
 }
 
 /* CONTEÚDO */
@@ -268,12 +269,7 @@ footer{
         </div>
     </div>
 
-    <input
-        type="text"
-        id="search"
-        class="search"
-        placeholder="Pesquisar tópico..."
-    >
+  
 
     <ul class="menu">
         <li><a href="#ingles">🇬🇧 Inglês</a></li>
@@ -476,27 +472,7 @@ footer{
 
 </main>
 
-<script>
-const searchInput = document.getElementById("search");
 
-searchInput.addEventListener("keyup", function(){
-
-    const filter = this.value.toLowerCase();
-
-    document.querySelectorAll(".topic").forEach(topic => {
-
-        const text = topic.innerText.toLowerCase();
-
-        if(text.includes(filter)){
-            topic.style.display = "block";
-        }else{
-            topic.style.display = "none";
-        }
-
-    });
-
-});
-</script>
 
 </body>
 </html>
