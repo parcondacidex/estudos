@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos</title>
+
+    <style>
+        :root {
+            --bg: #f7f7f5;
+            --sidebar: #ffffff;
+            --content: #ffffff;
+            --text: #2f3437;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --hover: #f3f4f6;
+            --accent: #2563eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--sidebar);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+
+        .menu {
+            list-style: none;
+        }
+
+        .menu li {
+            margin-bottom: 0.4rem;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+            padding: 0.7rem 0.9rem;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .menu a:hover {
+            background: var(--hover);
+        }
+
+        /* Conteúdo */
+        .content {
+            margin-left: 280px;
+            padding: 3rem;
+            width: calc(100% - 280px);
+        }
+
+        section {
+            background: var(--content);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            color: var(--muted);
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.6rem;
+        }
+
+        .card {
+            background: #fafafa;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .prompt {
+            background: #eef4ff;
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .content {
+                margin-left: 0;
+                width: 100%;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">📚 Estudos</div>
+        <div class="subtitle">Wiki pessoal de aprendizagem</div>
+
+        <ul class="menu">
+            <li><a href="#ingles">🇬🇧 Inglês</a></li>
+            <li><a href="#frances">🇫🇷 Francês</a></li>
+            <li><a href="#traducao">🌎 Tradução</a></li>
+            <li><a href="#programacao">💻 Programação</a></li>
+            <li><a href="#concursos">🎯 Concursos</a></li>
+            <li><a href="#anotacoes">📝 Anotações Gerais</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+
+        <h1>Estudos</h1>
+        <p>
+            Espaço centralizado para organização dos estudos, revisão de conteúdos
+            e acompanhamento da aprendizagem.
+        </p>
+
+        <section id="ingles">
+            <h2>🇬🇧 Inglês</h2>
+            <p>Gramática, vocabulário, leitura, escrita, compreensão oral e prática de conversação.</p>
+        </section>
+
+        <section id="frances">
+            <h2>🇫🇷 Francês</h2>
+            <p>Gramática, compreensão de textos, vocabulário e produção escrita.</p>
+        </section>
+
+        <section id="traducao">
+            <h2>🌎 Tradução</h2>
+            <p>Teoria da tradução, localização de software, terminologia, CAT Tools e projetos acadêmicos.</p>
+        </section>
+
+        <section id="programacao">
+            <h2>💻 Programação</h2>
+
+            <div class="card">
+                <h3>Python</h3>
+                <p>Automação, scripts, análise de dados, bibliotecas e desenvolvimento.</p>
+            </div>
+
+            <div class="card">
+                <h3>JavaScript</h3>
+                <p>Front-end, DOM, lógica de programação e desenvolvimento web.</p>
+            </div>
+        </section>
+
+        <section id="concursos">
+            <h2>🎯 Concursos</h2>
+
+            <h3>Organização de Estudo</h3>
+
+            <ol>
+                <li>
+                    <strong>Usar o Raio-X do Gran Cursos</strong>
+                    para identificar os assuntos mais cobrados pela banca.
+                </li>
+
+                <li>
+                    <strong>Resolver 100 questões</strong>
+                    sobre o assunto estudado para identificar padrões e dificuldades.
+                </li>
+
+                <li>
+                    <strong>Explicar o conteúdo para um leigo</strong>
+                    utilizando linguagem simples, exemplos do cotidiano e analogias.
+                </li>
+
+                <li>
+                    Caso não seja possível compreender o conteúdo,
+                    utilizar o comentário do professor no ChatGPT com o seguinte prompt:
+                </li>
+            </ol>
+
+            <div class="prompt">
+                "Explique de forma didática e simples para um leigo. Crie associações,
+                exemplos e comparações que ajudem uma pessoa sem conhecimento prévio
+                a aprender e memorizar o conteúdo."
+            </div>
+
+            <ol start="5">
+                <li>
+                    <strong>Criar um caderno de erros ou flashcards</strong>
+                    contendo apenas questões erradas ou assuntos que geraram dúvidas.
+                </li>
+
+                <li>
+                    <strong>Realizar revisão estratégica</strong>
+                    dos conteúdos estudados periodicamente.
+                </li>
+
+                <li>
+                    <strong>Reforçar a teoria</strong>
+                    dos tópicos em que o desempenho nas questões estiver abaixo do esperado.
+                </li>
+            </ol>
+
+            <div class="card">
+                <h3>Fluxo Resumido</h3>
+                <p>
+                    Raio-X → Questões → Explicação Simples → ChatGPT (se necessário)
+                    → Caderno de Erros → Revisão Estratégica → Reforço Teórico.
+                </p>
+            </div>
+
+        </section>
+
+        <section id="anotacoes">
+            <h2>📝 Anotações Gerais</h2>
+            <p>
+                Área destinada a resumos, ideias, observações, lembretes,
+                referências bibliográficas e registros importantes.
+            </p>
+        </section>
+
+        <footer>
+            © 2026 • Estudos • GitHub Pages
+        </footer>
+
+    </main>
+
+</body>
+</html>
