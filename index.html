@@ -254,20 +254,20 @@ footer{
     .content{
         padding:20px;
     }
-    ```css
-/* ---------- SUBSEÇÃO TERMINOLOGIA ---------- */
+    css
+/* Glossário de Terminologia */
 
 .subtopic{
     margin-top:20px;
     border:1px solid var(--border);
     border-radius:8px;
     overflow:hidden;
-    background:rgba(255,255,255,0.35);
+    background:#ffffff60;
 }
 
 .subtopic summary{
     padding:12px 16px;
-    font-size:.95rem;
+    font-size:0.95rem;
     font-weight:600;
 }
 
@@ -286,29 +286,25 @@ footer{
 }
 
 .glossario-coluna h4{
-    margin-bottom:15px;
+    margin-bottom:10px;
     color:var(--blue-dark);
 }
 
 .termo{
-    padding-bottom:12px;
     margin-bottom:12px;
+    padding-bottom:12px;
     border-bottom:1px solid var(--border);
 }
 
 .termo:last-child{
-    margin-bottom:0;
     border-bottom:none;
 }
 
-@media(max-width:800px){
-
+@media(max-width:700px){
     .glossario{
         grid-template-columns:1fr;
     }
-
 }
-```
 
 }
 </style>
@@ -380,7 +376,7 @@ footer{
         </div>
     </details>
 
-   ```html
+
 <!-- TRADUÇÃO -->
 
 <details id="traducao" class="topic">
@@ -388,29 +384,23 @@ footer{
 
     <div class="details-content">
 
-        <p>
-            Teoria da tradução, localização de software,
-            terminologia, revisão textual e pesquisa acadêmica.
-        </p>
+        Teoria da tradução, localização de software,
+        terminologia, revisão textual e pesquisa acadêmica.
 
-        <p>
-            <a href="https://drive.google.com/drive/folders/1eKKB9_z9UFQ38wtBKacqGDwhQFSFEUgd?usp=drive_link">
-                Referencial teórico
-            </a>
-        </p>
+        <br><br>
+
+        <a href="https://drive.google.com/drive/folders/1eKKB9_z9UFQ38wtBKacqGDwhQFSFEUgd?usp=drive_link">
+            Referencial teórico
+        </a>
 
         <!-- TERMINOLOGIA -->
 
         <details class="subtopic">
-
             <summary>📖 Terminologia</summary>
 
             <div class="glossario">
 
-                <!-- COLUNA 1 -->
-
                 <div class="glossario-coluna">
-
                     <h4>Português</h4>
 
                     <div class="termo">
@@ -420,24 +410,13 @@ footer{
 
                     <div class="termo">
                         <strong>Localização</strong><br>
-                        Processo de adaptação linguística e cultural
-                        de um produto para determinado público.
+                        Adaptação de um produto para uma cultura específica.
                     </div>
-
-                    <div class="termo">
-                        <strong>Tradução Técnica</strong><br>
-                        Tradução de conteúdos especializados.
-                    </div>
-
-                    <!-- ADICIONE NOVOS TERMOS AQUI -->
 
                 </div>
 
-                <!-- COLUNA 2 -->
-
                 <div class="glossario-coluna">
-
-                    <h4>Equivalentes</h4>
+                    <h4>Inglês / Francês</h4>
 
                     <div class="termo">
                         <strong>Term</strong><br>
@@ -446,15 +425,8 @@ footer{
 
                     <div class="termo">
                         <strong>Localization</strong><br>
-                        Linguistic and cultural adaptation of a product.
+                        Adaptation of a product to a specific locale.
                     </div>
-
-                    <div class="termo">
-                        <strong>Technical Translation</strong><br>
-                        Translation of specialized content.
-                    </div>
-
-                    <!-- ADICIONE NOVOS TERMOS AQUI -->
 
                 </div>
 
@@ -464,7 +436,7 @@ footer{
 
     </div>
 </details>
-```
+
 
 
     <!-- PROGRAMAÇÃO -->
