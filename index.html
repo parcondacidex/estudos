@@ -276,13 +276,37 @@ footer{
     grid-template-columns:1fr 1fr;
     gap:20px;
     padding:15px;
+} 
+.glossario-wrapper{
+    overflow-x:auto;
+    margin-top:15px;
 }
-
+.glossario-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+    min-width:700px;
+}
+.glossario-table th{
+    background:var(--sidebar);
+    color:var(--blue-dark);
+    text-align:left;
+    padding:12px;
+    border-bottom:2px solid var(--border);
+}
+    .glossario-table td{
+    padding:12px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+}
 .glossario-coluna{
     background:var(--card);
     border:1px solid var(--border);
     border-radius:8px;
     padding:15px;
+}
+    .glossario-table tbody tr:hover{
+    background:var(--hover);
 }
 
 .glossario-coluna h4{
@@ -398,39 +422,37 @@ footer{
         <details class="subtopic">
             <summary>📖 Terminologia</summary>
 
-            <div class="glossario">
+          <div class="glossario-wrapper">
 
-                <div class="glossario-coluna">
-                    <h4>Português</h4>
+    <table class="glossario-table">
 
-                    <div class="termo">
-                        <strong>Termo</strong><br>
-                        Definição
-                    </div>
+        <thead>
+            <tr>
+                <th>Português</th>
+                <th>Inglês</th>
+                <th>Observações</th>
+            </tr>
+        </thead>
 
-                    <div class="termo">
-                        <strong>Localização</strong><br>
-                        Adaptação de um produto para uma cultura específica.
-                    </div>
+        <tbody>
 
-                </div>
+            <tr>
+                <td>Localização</td>
+                <td>Localization</td>
+                <td>Adaptação linguística e cultural.</td>
+            </tr>
 
-                <div class="glossario-coluna">
-                    <h4>Inglês / Francês</h4>
+            <tr>
+                <td>Internacionalização</td>
+                <td>Internationalization</td>
+                <td>Preparação técnica do software.</td>
+            </tr>
 
-                    <div class="termo">
-                        <strong>Term</strong><br>
-                        Definition
-                    </div>
+        </tbody>
 
-                    <div class="termo">
-                        <strong>Localization</strong><br>
-                        Adaptation of a product to a specific locale.
-                    </div>
+    </table>
 
-                </div>
-
-            </div>
+</div>
 
         </details>
 
