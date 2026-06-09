@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudos</title>
+
+<style>
+:root{
+
+    /* Fundo cinza claro */
+    --bg:#f3f4f6;
+
+    /* Azul pastel */
+    --sidebar:#edf4fb;
+    --card:#f8fbff;
+
+    /* Verde pastel */
+    --accent:#8bc5a3;
+    --accent-dark:#5c9a76;
+
+    /* Azul complementar */
+    --blue:#bdd9f5;
+    --blue-dark:#7faedc;
+
+    --text:#2d3a33;
+    --muted:#6f7d75;
+
+    /* Bordas azul-acinzentadas */
+    --border:#d7e3ef;
+
+    /* Hover suave */
+    --hover:#e7f0f9;
+
+    /* Sombras */
+    --shadow:0 8px 24px rgba(127,174,220,0.10);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Segoe UI", Inter, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* CABEÇALHO */
+
+.sidebar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:var(--sidebar);
+    border-bottom:1px solid var(--border);
+
+    padding:12px 30px;
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+    justify-content:space-between;
+
+    box-shadow:var(--shadow);
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:700;
+    color:var(--blue-dark);
+}
+
+.subtitle{
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+ CABEÇALHO .search{
+    padding:12px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    min-width:220px;
+    outline:none;
+    background:white;
+}
+
+.search:focus{
+   border-color:var(--blue-dark);
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:2px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:var(--text);
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    background:transparent;
+
+    border:none;
+
+    font-size:.95rem;
+
+    transition:.2s;
+}
+
+.menu a:hover{
+    background:rgba(127,174,220,.15);
+    color:var(--blue-dark);
+}
+
+/* CONTEÚDO */
+
+.content{
+    width:100%;
+    padding:40px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.hero{
+    margin-bottom:35px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+    color:var(--accent-dark);
+}
+
+.hero p{
+    color:var(--muted);
+}
+
+/* TÓPICOS */
+
+details{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    margin-bottom:18px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+summary{
+    cursor:pointer;
+    list-style:none;
+    padding:20px 24px;
+    font-size:1.1rem;
+    font-weight:600;
+    transition:.2s;
+}
+
+summary:hover{
+    background:var(--hover);
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary::after{
+    content:"+";
+    float:right;
+    font-size:1.3rem;
+    color:var(--purple-dark);
+}
+
+details[open] summary::after{
+    content:"–";
+}
+
+.details-content{
+    padding:0 24px 24px 24px;
+    line-height:1.8;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:15px;
+    margin-top:12px;
+}
+
+.prompt{
+    background:#f1f7fd;
+    border-left:5px solid var(--blue-dark);
+    padding:15px;
+    margin:15px 0;
+    border-radius:8px;
+    font-style:italic;
+}
+
+.flow{
+    margin-top:15px;
+    background:#f1f7fd;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:15px;
+}
+
+a{
+    color:var(--accent-dark);
+}
+
+ol{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:12px;
+}
+
+footer{
+    text-align:center;
+    margin-top:40px;
+    color:var(--muted);
+}
+
+@media(max-width:900px){
+
+    .sidebar{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .menu{
+        width:100%;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .content{
+        padding:20px;
+    }
+    css
+/* Glossário de Terminologia */
+
+.subtopic{
+    margin-top:20px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+    background:#ffffff60;
+}
+
+.subtopic summary{
+    padding:12px 16px;
+    font-size:0.95rem;
+    font-weight:600;
+}
+
+.glossario{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    padding:15px;
+} 
+.glossario-wrapper{
+    overflow-x:auto;
+    margin-top:15px;
+}
+.glossario-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+    min-width:700px;
+}
+.glossario-table th{
+    background:var(--sidebar);
+    color:var(--blue-dark);
+    text-align:left;
+    padding:12px;
+    border-bottom:2px solid var(--border);
+}
+    .glossario-table td{
+    padding:12px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+}
+.glossario-coluna{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:15px;
+}
+    .glossario-table tbody tr:hover{
+    background:var(--hover);
+}
+
+.glossario-coluna h4{
+    margin-bottom:10px;
+    color:var(--blue-dark);
+}
+
+.termo{
+    margin-bottom:12px;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--border);
+}
+
+.termo:last-child{
+    border-bottom:none;
+}
+
+@media(max-width:700px){
+    .glossario{
+        grid-template-columns:1fr;
+    }
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header class="sidebar">
+
+    <div>
+        <div class="logo">Bem-vinda aos Estudos, Helena </div>
+        <div class="subtitle">
+            Central de organização dos estudos
+        </div>
+    </div>
+
+  
+
+    <ul class="menu">
+        <li><a href="#ingles">🇬🇧 Inglês</a></li>
+        <li><a href="#frances">🇫🇷 Francês</a></li>
+        <li><a href="#traducao">🌎 Tradução</a></li>
+        <li><a href="#programacao">💻 Programação</a></li>
+        <li><a href="#concursos">🎯 Concursos</a></li>
+        <li><a href="#anotacoes">📝 Anotações</a></li>
+    </ul>
+
+</header>
+
+<main class="content">
+
+    <div class="hero">
+        <h1>Mapeamento dos Estudos</h1>
+        <p>
+            Repositório pessoal para organização, revisão e aprendizagem contínua.
+        </p>
+    </div>
+
+    <!-- Cole aqui todos os seus blocos <details> já existentes -->
+    <!-- Inglês -->
+    <!-- Francês -->
+    <!-- Tradução -->
+    <!-- Programação -->
+    <!-- Concursos -->
+    <!-- Anotações Gerais -->
+
+
+    <!-- INGLÊS -->
+
+    <details id="ingles" class="topic">
+        <summary>🇬🇧 Inglês</summary>
+
+        <div class="details-content">
+            Gramática, vocabulário, leitura, escrita, listening,
+            speaking e certificações internacionais.
+            <a href= "https://englishrevealed.co.uk/cpe.php">english revealed</a>
+        </div>
+    </details>
+
+    <!-- FRANCÊS -->
+
+    <details id="frances" class="topic">
+        <summary>🇫🇷 Francês</summary>
+
+        <div class="details-content">
+            Gramática, compreensão oral, vocabulário,
+            produção escrita e conversação.
+              <a href= "https://francaisfacile.rfi.fr/br/exercices/">Des podcasts et des exercices pour apprendre et pratiquer le français, pour tous les niveaux.</a>
+        </div>
+    </details>
+
+
+<!-- TRADUÇÃO -->
+
+<details id="traducao" class="topic">
+    <summary>🌎 Tradução</summary>
+
+    <div class="details-content">
+
+        Teoria da tradução, localização de software,
+        terminologia, revisão textual e pesquisa acadêmica.
+
+        <br><br>
+
+        <a href="https://drive.google.com/drive/folders/1eKKB9_z9UFQ38wtBKacqGDwhQFSFEUgd?usp=drive_link">
+            Referencial teórico
+        </a>
+
+        <!-- TERMINOLOGIA -->
+
+        <details class="subtopic">
+            <summary>📖 Terminologia</summary>
+
+          <div class="glossario-wrapper">
+
+    <table class="glossario-table">
+
+        <thead>
+            <tr>
+                <th>Português</th>
+                <th>Inglês</th>
+                <th>Observações</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Localização</td>
+                <td>Localization</td>
+                <td>Adaptação linguística e cultural.</td>
+            </tr>
+
+            <tr>
+                <td>Internacionalização</td>
+                <td>Internationalization</td>
+                <td>Preparação técnica do software.</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+        </details>
+
+    </div>
+</details>
+
+
+
+    <!-- PROGRAMAÇÃO -->
+
+    <details id="programacao" class="topic">
+        <summary>💻 Programação</summary>
+
+        <div class="details-content">
+
+            <div class="card">
+                <strong>Python</strong><br>
+                Automação, scripts, análise de dados,
+                desenvolvimento e bibliotecas.
+                <a href= "https://pypi.org/project/pyTelegramBotAPI/#getting-started">Bot using Python.</a>
+                
+                <a href= "https://www.freecodecamp.org/news/how-to-create-a-telegram-bot-using-python/">Telegram Bot using Python.</a>
+                
+            </div>
+
+            <div class="card">
+                <strong>Java</strong><br>
+                Desenvolvimento web, DOM, APIs e lógica
+                de programação.
+                GymCode para revisar
+            </div>
+
+        </div>
+    </details>
+
+    <!-- CONCURSOS -->
+
+    <details id="concursos" class="topic">
+        <summary>🎯 Concursos</summary>
+
+        <div class="details-content">
+
+            <h3>Seguir passo a passo. Receita para estudos</h3>
+
+            <br>
+
+            <ol>
+                <li>
+                    Utilizar o <strong>Raio-X do Gran Cursos</strong>
+                    para identificar os assuntos mais cobrados.
+                </li>
+
+                <li>
+                    Resolver <strong>100 questões</strong>
+                    sobre o assunto da banca.
+                </li>
+
+                <li>
+                    Explicar o conteúdo de forma simples para
+                    uma pessoa sem conhecimentos sobre concursos.
+                </li>
+
+                <li>
+                    Caso não consiga compreender o conteúdo,
+                    utilizar o comentário do professor no ChatGPT.
+                </li>
+            </ol>
+
+            <div class="prompt">
+                "Explique de forma didática e simples para um leigo.
+                Crie associações de forma que um leigo consiga
+                aprender e memorizar."
+            </div>
+
+            <ol start="5">
+                <li>
+                    Criar um caderno de erros ou flashcards
+                    contendo todas as questões erradas.
+                </li>
+
+                <li>
+                    Fazer revisões estratégicas periódicas.
+                </li>
+
+                <li>
+                    Estudar novamente a teoria dos tópicos
+                    em que houver maior quantidade de erros.
+                </li>
+            </ol>
+
+            <div class="flow">
+                <strong>Fluxo de estudo:</strong><br><br>
+                Raio-X → 100 Questões → Explicação Simples →
+                ChatGPT → Caderno de Erros →
+                Revisão Estratégica → Reforço Teórico
+            </div>
+
+        </div>
+    </details>
+
+    <!-- ANOTAÇÕES -->
+
+    <details id="anotacoes" class="topic">
+        <summary>📝 Anotações Gerais</summary>
+
+        <div class="details-content">
+            Espaço para resumos, observações,
+            referências bibliográficas, ideias,
+            lembretes e conteúdos importantes.
+              <ol>
+                <li>
+                    <strong>TCC - Bloatynosy tradução</strong>
+                    
+                </li>
+
+                <li>
+                   O Existencialismo é Humanismo (1946) Jean-Paul Sartre
+                </li>
+
+                <li>
+                    Crime e Castigo 1866 Fiódor Dostoiévski
+                </li>
+
+                <li>
+                     Gilles Deleuze, Sociedade do Controle
+                </li>
+                   <li>
+                       Mario Perniola "Nós enquanto filhos e netos da revolução industrial, estamos acostumado a inserir ela na nossa vida afetiva." Barulhinhos do dia a dia que nos dão prazer (televisão, computador, celular)
+        
+                </li>
+                    <li>
+                      ? Vigiar e Punir: ?
+                        Le Cordon Bleu
+                </li>
+            </ol>
+      
+        </div>
+    </details>
+    <footer>
+        © 2026 • Estudos
+    </footer>
+
+</main>
+
+
+
+</body>
+</html>
